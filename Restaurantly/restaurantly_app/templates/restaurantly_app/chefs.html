@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+<!-- ======= Chefs Section ======= -->
+    <section id="chefs" class="chefs">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Chefs</h2>
+          <p>Our Proffesional Chefs</p>
+        </div>
+
+        <div class="row">
+
+          {% for chef in chefs %}
+            <div class="col-lg-4 col-md-6">
+              <a href="{% url 'chefs_with_name' chef.name %}">
+                <div class="member" data-aos="zoom-in" data-aos-delay="100">
+                  <img src="{% static chef.img %}" class="img-fluid" alt="">
+                  <div class="member-info">
+                    <div class="member-info-content">
+                      <h4>{{chef.name}}</h4>
+                      <span>{{chef.status}}</span>
+                    </div>
+                    <div class="social">
+                      <a href=""><i class="bi bi-twitter"></i></a>
+                      <a href=""><i class="bi bi-facebook"></i></a>
+                      <a href=""><i class="bi bi-instagram"></i></a>
+                      <a href=""><i class="bi bi-linkedin"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </section><!-- End Chefs Section -->
+{% endblock main %}

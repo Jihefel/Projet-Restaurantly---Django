@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Restaurantly Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href={% static 'restaurantly_app/img/favicon.png' %} rel="icon">
+  <link href={% static 'restaurantly_app/img/apple-touch-icon.png' %} rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href={% static 'restaurantly_app/vendor/animate.css/animate.min.css' %} rel="stylesheet">
+  <link href={% static 'restaurantly_app/vendor/aos/aos.css' %} rel="stylesheet">
+  <link href={% static 'restaurantly_app/vendor/bootstrap/css/bootstrap.min.css' %} rel="stylesheet">
+  <link href={% static 'restaurantly_app/vendor/bootstrap-icons/bootstrap-icons.css' %} rel="stylesheet">
+  <link href={% static 'restaurantly_app/vendor/boxicons/css/boxicons.min.css' %} rel="stylesheet">
+  <link href={% static 'restaurantly_app/vendor/glightbox/css/glightbox.min.css' %} rel="stylesheet">
+  <link href={% static 'restaurantly_app/vendor/swiper/swiper-bundle.min.css' %} rel="stylesheet">
+
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  
+  <!-- Template Main CSS File -->
+  <link href={% static 'restaurantly_app/css/style.css' %} rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Restaurantly
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/restaurantly-restaurant-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  {% include "restaurantly_app/top_bar.html" %}
+  {% block hero %}
+  
+  {% endblock hero %}
+  
+  <main id="main">
+  {% block main %}
+  
+  {% endblock main %}
+  </main>
+
+  {% include "restaurantly_app/footer.html" %}
+
+  {% include "restaurantly_app/preloader.html" %}
+  {% include "restaurantly_app/back_to_top.html" %}
+  
+
+  <!-- Vendor JS Files -->
+  <script src={% static 'restaurantly_app/vendor/aos/aos.js' %}></script>
+  <script src={% static 'restaurantly_app/vendor/bootstrap/js/bootstrap.bundle.min.js' %}></script>
+  <script src={% static 'restaurantly_app/vendor/glightbox/js/glightbox.min.js' %}></script>
+  <script src={% static 'restaurantly_app/vendor/isotope-layout/isotope.pkgd.min.js' %}></script>
+  <script src={% static 'restaurantly_app/vendor/swiper/swiper-bundle.min.js' %}></script>
+  <script src={% static 'restaurantly_app/vendor/php-email-form/validate.js' %}></script>
+
+  <!-- Template Main JS File -->
+  <script src={% static 'restaurantly_app/js/main.js' %}></script>
+
+
+</body>
+
+</html>
