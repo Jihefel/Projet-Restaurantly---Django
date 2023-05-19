@@ -44,8 +44,6 @@ def chefs(request, name=None):
 
     return render(request, 'restaurantly_app/chefs.html', {'chefs': chefs})
 
-
-
 def gallery(request):
     return render(request, 'restaurantly_app/gallery.html')
 

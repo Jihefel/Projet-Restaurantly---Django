@@ -26,6 +26,11 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
+        {% comment %} {% if request.path == "/" %}
+        <li><a class="nav-link scrollto active" href={% url 'home' %}>Home</a></li>
+        {% else %}
+        <li><a class="nav-link scrollto" href={% url 'home' %}>Home</a></li>
+        {% endif %} {% endcomment %}
           <li><a class="nav-link scrollto active" href={% url 'home' %}>Home</a></li>
           <li><a class="nav-link scrollto" href={% url 'about' %}>About</a></li>
           <li><a class="nav-link scrollto" href={% url 'menu' %}>Menu</a></li>
