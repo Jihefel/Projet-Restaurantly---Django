@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+<div class="py-5">
+<div class="py-5"></div>
+    <h1>Section 1: Tous les membres ({{ nb_membres }} membres)</h1>
+        <ul>
+            {% for membre in membres %}
+                <li {% if membre.genre == 'Homme' %} class="text-primary"{% else %} class="text-danger"{% endif %}>{{ membre.nom }} - {{ membre.age }} ans</li>
+            {% endfor %}
+        </ul>
+    
+        <h1>Section 2: Les hommes</h1>
+        <ul>
+            {% for homme in hommes %}
+                <li>{{ homme.nom }} - {{ homme.age }} ans</li>
+            {% endfor %}
+        </ul>
+    
+        <h1>Section 3: Les femmes</h1>
+        <ul>
+            {% for femme in femmes %}
+                <li>{{ femme.nom }} - {{ femme.age }} ans</li>
+            {% endfor %}
+        </ul>
+    
+        <h1>Section 4: Les hommes en condition</h1>
+        <ul>
+            {% for homme_condition in hommes_condition %}
+                <li>{{ homme_condition.nom }} - {{ homme_condition.age }} ans</li>
+            {% endfor %}
+        </ul>
+    
+        <h1>Section 5: Les femmes en condition</h1>
+        <ul>
+            {% for femme_condition in femmes_condition %}
+                <li>{{ femme_condition.nom }} - {{ femme_condition.age }} ans</li>
+            {% endfor %}
+        </ul>
+    
+        <h1>Section 6: Les personnes hors conditions</h1>
+        <ul>
+            {% for personne_hors_condition in personnes_hors_conditions %}
+                <li>{{ personne_hors_condition.nom }} - {{ personne_hors_condition.age }} ans</li>
+            {% endfor %}
+        </ul>
+</div>
+{% endblock main %}
