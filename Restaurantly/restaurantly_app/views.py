@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Membre
+from .models import Member
 
 # Create your views here.
 
@@ -61,22 +61,22 @@ def back_to_top(request):
     return render(request, 'restaurantly_app/back_to_top.html')
 
 def membres(request):
-    membres = Membre.objects.all()
-    nb_membres = membres.count()
-    hommes = membres.filter(genre='Homme')
-    femmes = membres.filter(genre='Femme')
-    hommes_condition = hommes.filter(age__range=(18, 24))
-    femmes_condition = femmes.filter(age__range=(18, 24))
-    personnes_hors_conditions = membres.exclude(age__range=(18, 24))
+    membres = Member.objects.all()
+    # nb_membres = membres.count()
+    # hommes = membres.filter(genre='Homme')
+    # femmes = membres.filter(genre='Femme')
+    # hommes_condition = hommes.filter(age__range=(18, 24))
+    # femmes_condition = femmes.filter(age__range=(18, 24))
+    # personnes_hors_conditions = membres.exclude(age__range=(18, 24))
 
     context = {
         'membres': membres,
-        'nb_membres': nb_membres,
-        'hommes': hommes,
-        'femmes': femmes,
-        'hommes_condition': hommes_condition,
-        'femmes_condition': femmes_condition,
-        'personnes_hors_conditions': personnes_hors_conditions
+        # 'nb_membres': nb_membres,
+        # 'hommes': hommes,
+        # 'femmes': femmes,
+        # 'hommes_condition': hommes_condition,
+        # 'femmes_condition': femmes_condition,
+        # 'personnes_hors_conditions': personnes_hors_conditions
     }
 
     return render(request, 'restaurantly_app/membres.html', context)
