@@ -62,21 +62,21 @@ def back_to_top(request):
 
 def membres(request):
     membres = Member.objects.all()
-    # nb_membres = membres.count()
-    # hommes = membres.filter(genre='Homme')
-    # femmes = membres.filter(genre='Femme')
-    # hommes_condition = hommes.filter(age__range=(18, 24))
-    # femmes_condition = femmes.filter(age__range=(18, 24))
-    # personnes_hors_conditions = membres.exclude(age__range=(18, 24))
+    nb_membres = membres.count()
+    hommes = membres.filter(gender='male')
+    femmes = membres.filter(gender='female')
+    hommes_condition = hommes.filter(age__range=(18, 24))
+    femmes_condition = femmes.filter(age__range=(18, 24))
+    personnes_hors_conditions = membres.exclude(age__range=(18, 24))
 
     context = {
         'membres': membres,
-        # 'nb_membres': nb_membres,
-        # 'hommes': hommes,
-        # 'femmes': femmes,
-        # 'hommes_condition': hommes_condition,
-        # 'femmes_condition': femmes_condition,
-        # 'personnes_hors_conditions': personnes_hors_conditions
+        'nb_membres': nb_membres,
+        'hommes': hommes,
+        'femmes': femmes,
+        'hommes_condition': hommes_condition,
+        'femmes_condition': femmes_condition,
+        'personnes_hors_conditions': personnes_hors_conditions
     }
 
     return render(request, 'restaurantly_app/membres.html', context)
